@@ -1,0 +1,26 @@
+PIPELINE_TYPE: 'Voice2Pose'
+
+VOICE2POSE:
+  GENERATOR:
+    NAME: 'HierarchicalPoseGenerator'
+    NORM: 'BN'
+    DEEPSPEECH_FEATURE: True
+    SEED_POSE: True
+  POSE_DISCRIMINATOR:
+    NAME: 'HandDiscriminator'
+    LAMBDA_GAN: 0.1
+    MOTION: False
+    WARM_UP: 20
+
+DATASET:
+  NAME: 'GestureDataset'
+  ROOT_DIR: 'datasets/speakers'
+  HIERARCHICAL_POSE: False
+
+TRAIN:
+  BATCH_SIZE: 48
+  NUM_EPOCHS: 150
+  LR: 1e-4
+
+SYS:
+  DISTRIBUTED: False

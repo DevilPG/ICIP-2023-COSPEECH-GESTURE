@@ -1,0 +1,22 @@
+PIPELINE_TYPE: 'Joint2Pose'
+POSE2POSE:
+  AUTOENCODER:
+    NAME: 'Jointencoder'
+    CODE_DIM: 32
+
+DATASET:
+  NAME: 'GestureDataset'
+  ROOT_DIR: 'datasets/speakers'
+  HIERARCHICAL_POSE: False
+
+VOICE2POSE:
+  GENERATOR:
+    NAME: 'HierarchicalPoseGenerator'
+    NORM: 'BN'
+    DEEPSPEECH_FEATURE: True
+    SEED_POSE: True
+
+TRAIN:
+  NUM_EPOCHS: 150
+  LR: 1e-4
+  SIM_LOSS_WEIGHT : 0.1

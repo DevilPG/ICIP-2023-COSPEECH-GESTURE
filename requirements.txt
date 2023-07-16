@@ -1,0 +1,11 @@
+absl-py
+librosa
+moviepy
+opencv-python==4.4.0.46
+pandas
+tensorboard
+tqdm
+yacs
+matplotlib
+ffmpeg-python
+scipy
